@@ -25,5 +25,5 @@ func XORStrings(str1,str2 string) string{
     for i:= 0; i < len(decodedStr1); i++ {
         resultString[i] += decodedStr1[i] ^ decodedStr2[i]
     }
-    return hex.EncodeToString(resultString) 
+    return hex.EncodeToString(resultString)
 }
