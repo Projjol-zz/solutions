@@ -16,3 +16,14 @@ func HexToString(str string) string {
     }
     return string(decoded[:])
 }
+
+func XORStrings(str1,str2 string) string{
+    decodedStr1, _ := hex.DecodeString(str1)
+    decodedStr2, _ := hex.DecodeString(str2)
+    resultString := make([]byte, len(decodedStr1))
+
+    for i:= 0; i < len(decodedStr1); i++ {
+        resultString[i] += decodedStr1[i] ^ decodedStr2[i]
+    }
+    return hex.EncodeToString(resultString) 
+}

@@ -20,7 +20,19 @@ func Testb64(t *testing.T) {
       for _, c := range cases {
           got := Base64Converter(c.in)
           if got != c.want{
-              t.Errorf("HexToStringError(%q) == %q, want %q", c.in, got, c.want)
+              t.Errorf("Base64Error(%q) == %q, want %q", c.in, got, c.want)
+          }
+      }
+}
+
+
+func TestXor(t *testing.T) {
+    cases := []struct{stringBuf1, stringBuf2, want string}{
+        {"1c0111001f010100061a024b53535009181c", "686974207468652062756c6c277320657965", "746865206b696420646f6e277420706c6179"} }
+      for _, c := range cases {
+          got := XORStrings(c.stringBuf1, c.stringBuf2)
+          if got != c.want{
+              t.Errorf("XORError(%q) == %q, want %q", c.in, got, c.want)
           }
       }
 }
