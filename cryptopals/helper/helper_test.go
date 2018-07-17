@@ -13,7 +13,7 @@ func TestHex(t *testing.T) {
 	}
 }
 
-func Testb64(t *testing.T) {
+func TestB64(t *testing.T) {
 	cases := []struct{ in, want string }{
 		{"I'm killing your brain like a poisonous mushroom", "SSdtIGtpbGxpbmcgeW91ciBicmFpbiBsaWtlIGEgcG9pc29ub3VzIG11c2hyb29t"}}
 	for _, c := range cases {
