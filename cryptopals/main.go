@@ -28,6 +28,12 @@ func main(){
             } else {
                 fmt.Println("Missing mandatory parameter")
             }
+        case "singleCipher":
+            if len(os.Args[1:]) == 2 {
+                fmt.Println(XorCipher(os.Args[2]))
+            } else {
+                fmt.Println("Missing mandatory parameter")
+            }
         }
     } else {
         fmt.Println("Missing mandatory parameter")

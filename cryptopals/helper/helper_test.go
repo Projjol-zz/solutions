@@ -32,7 +32,18 @@ func TestXor(t *testing.T) {
       for _, c := range cases {
           got := XORStrings(c.stringBuf1, c.stringBuf2)
           if got != c.want{
-              t.Errorf("XORError(%q) == %q, want %q", c.in, got, c.want)
+              t.Errorf("XORError(%q) == %q, want %q", c.stringBuf1, c.stringBuf2, c.want)
+          }
+      }
+}
+
+func TestSingleCipher(t *testing.T) {
+    cases := []struct{in, want string}{
+      {"1b37373331363f78151b7f2b783431333d78397828372d363c78373e783a393b3736", "Cooking MC's like a pound of bacon"}    }
+    for _, c := range cases {
+          got := SingleXORCipher(c.in)
+          if got != c.want{
+              t.Errorf("HexToStringError(%q) == %q, want %q", c.in, got, c.want)
           }
       }
 }
